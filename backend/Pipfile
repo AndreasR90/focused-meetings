@@ -14,6 +14,7 @@ black = "*"
 flake8 = "*"
 flake8-pyproject = "*"
 pre-commit = "*"
+uvicorn = {extras = ["standard"], version = "*"}
 
 [requires]
 python_version = "3.10"
