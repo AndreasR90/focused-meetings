@@ -8,7 +8,7 @@ from crud import (
 from models.user import User
 from websocket.response import MultipleResponse, Response, ResponseType
 
-user_includes = set(["name", "focused"])
+user_includes = set(["name", "focused", "id"])
 
 
 def map_users(users):

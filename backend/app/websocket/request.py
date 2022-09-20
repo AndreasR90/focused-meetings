@@ -9,4 +9,7 @@ class Request:
 
     @staticmethod
     def from_dict(dictionary) -> "Request":
-        return Request(function=dictionary["function"], arguments=dictionary["arguments"])
+        return Request(
+            function=dictionary["function"],
+            arguments={str(key): str(value) for key, value in dictionary["arguments"].items()},
+        )

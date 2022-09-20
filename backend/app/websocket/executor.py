@@ -1,7 +1,7 @@
 from typing import Callable, Dict, Optional
 
 from websocket.request import Request
-from websocket.response import Response
+from websocket.response import MultipleResponse
 
 
 class Executor:
@@ -12,7 +12,7 @@ class Executor:
         used_name = name or function.__name__
         self.registered_functions[used_name] = function
 
-    def execute(self, request: Request) -> Response:
+    def execute(self, request: Request) -> MultipleResponse:
         fct = self.registered_functions.get(request.function)
         if fct is None:
             raise AttributeError(f"Function {request.function} is not registered")

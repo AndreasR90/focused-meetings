@@ -42,3 +42,8 @@ async def websocket(websocket: WebSocket, session_id: str):
     except Exception as e:
         logger.error(e)
         raise e
+
+
+@app.get("/")
+def index():
+    return "Hello"

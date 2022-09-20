@@ -8,8 +8,7 @@ from models.user import User
 
 
 def get_or_create_session(session_id: str) -> Session:
-    statement = select(Session).where(Session.id == session_id)
-    session = db_session.exec(statement=statement).first()
+    session = db_session.get(Session, session_id)
     if session is None:
         session = create_session(session_id=session_id)
     return session
@@ -47,6 +46,5 @@ def delete_user(id: str):
     session_id = user.session_id
     db_session.delete(user)
     session = db_session.get(Session, session_id)
-    if len(session.users) == 1:
+    if len(session.users) == 0:
         db_session.delete(session)
-    db_session.commit()
