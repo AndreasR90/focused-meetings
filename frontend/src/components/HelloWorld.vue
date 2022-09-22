@@ -139,6 +139,10 @@ export default {
       }
       this.sessionId = urlSessionId;
     },
+    CopyToClipboard() {
+      const link = `${location.href}?session_id=${this.sessionId}`;
+      this.$copyText(link);
+    },
   },
 };
 </script>
