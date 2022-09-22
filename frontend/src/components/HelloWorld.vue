@@ -30,9 +30,9 @@
             >
               {{ sessionId }}
             </a>
-            <button class="clipboard" @click="CopyToClipboard">
-              &#128203;
-            </button>
+            <a href="#" @click="CopyToClipboard" class="clipboard"
+              ><i class="fa fa-copy"></i>
+            </a>
           </span>
         </div>
       </div>
@@ -278,5 +278,10 @@ export default {
 .link {
   grid-column: 2 / 3;
   grid-row: 5 / 6;
+}
+.clipboard {
+  margin-left: 10px;
+  padding: 2px;
+  border: solid 2px;
 }
 </style>
