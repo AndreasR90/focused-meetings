@@ -48,6 +48,9 @@
           <a id="session" :href="`?session_id=${sessionId}`">
             {{ sessionId }}</a
           >
+          <a href="#" @click="CopyToClipboard" class="clipboard"
+            ><i class="fa fa-copy"></i>
+          </a>
         </span>
         <input type="submit" class="submit" value="Login" @click="login" />
       </div>
