@@ -22,7 +22,7 @@ COPY frontend/ .
 
 
 WORKDIR /
-COPY build.sh .
+COPY build/build.sh .
 RUN chmod u+x build.sh
 EXPOSE 80
 CMD ["/build.sh"]
