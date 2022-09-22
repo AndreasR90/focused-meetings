@@ -1,4 +1,5 @@
 cd /frontend
+npm install
 npm run build
 mv dist /backend/app/dist
 cd /backend/app
