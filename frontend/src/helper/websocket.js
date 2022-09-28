@@ -1,9 +1,9 @@
 export class WebsocketConnection {
   constructor(sessionId) {
     this.sessionId = sessionId;
-    // var url = process.env.VUE_APP_URL
+    var url = process.env.VUE_APP_URL;
     // const url = "ws://localhost:80/ws";
-    const url = "ws://focused-meetings.azurewebsites.net/:80/ws";
+    // const url = "ws://focused-meetings.azurewebsites.net/:80/ws";
     this.connection = new WebSocket(url + "/" + sessionId);
     this.connection.onmessage = this.receiveSocket;
     this.connection.onopen = () => console.log("connectoin established");
